@@ -7,12 +7,6 @@
 
 import Foundation
 
-enum HTTPMethod: String {
-    case get = "GET"
-    case post = "POST"
-    case put = "PUT"
-    case delete = "DELETE"
-}
 
 final class Network {
     
@@ -46,3 +40,27 @@ final class Network {
     }
 
 }
+/*MARK:  There are two ways to handle a request
+ 1. using do catch blocks
+ 
+ do {
+     let responseData: ResponseData = try await request(url: url, method: .post, body: body, headers: headers)
+     print("Response data: \(responseData)")
+ } catch {
+     print("Error making POST request: \(error.localizedDesciption)")
+ }
+ 
+ 
+ 2. using promises
+ let result: Result<ResponseData, Error> = try await Result {
+     return try await request(url: url, method: .post, body: body, headers: headers)
+ }
+ // Handle the result
+ switch result {
+ case .success(let responseData):
+     print("POST request successful. Response data: \(responseData)")
+ case .failure(let error):
+     print("POST request failed with error: \(error)")
+ }
+
+ */
