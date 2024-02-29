@@ -17,7 +17,6 @@ class NewsViewModel:ObservableObject {
     }
     
     
-    
     func fetchNewsData() async {
         DispatchQueue.main.async {
             self.isLoading = true
