@@ -6,13 +6,15 @@
 //
 
 import Foundation
-struct NewsModel:Codable,Identifiable {
+//MARK: To be able to use the Navigation Links we need to conforms to hashable protocol
+struct NewsModel:Hashable,Codable,Identifiable {
     let id,publishedAt: Int?
     let title,description,source,type: String?
     let images:ImageURL?
     let imageData:Data?
+    let isRead:Bool?
 }
 
-struct ImageURL:Codable {
+struct ImageURL:Hashable,Codable {
     let square_140: String?
 }

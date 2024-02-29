@@ -12,9 +12,7 @@ class NewsViewModel:ObservableObject {
     @Published var errorMessage: ErrorWrapper? = nil
     private var service:NewsServiceProtocol
     
-    init(
-        service: NewsServiceProtocol = NewsService()
-    ) {
+    init(service: NewsServiceProtocol = NewsService()) {
         self.service = service
     }
     
