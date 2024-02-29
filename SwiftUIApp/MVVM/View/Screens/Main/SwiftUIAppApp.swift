@@ -13,7 +13,7 @@ struct SwiftUIAppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            NewsFeedView()
+           TabBar()
 //            ContentView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
