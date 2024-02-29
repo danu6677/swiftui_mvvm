@@ -25,8 +25,7 @@ struct DetailView: View {
         ImageView(
             url: newsItem.images?.square_140 ?? "",
             width: 300,
-            height: 300,
-            isRounded: false
+            height: 300
         )
         .padding(
             20

@@ -19,7 +19,7 @@ struct NewsItem: View {
                     .padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 20))
             }
                 
-            ImageView(url: newsItem.images?.square_140 ?? "",width: 100,height: 100,isRounded: true)
+            ImageView(url: newsItem.images?.square_140 ?? "",isRounded: true)
                 .padding(20)
             Text(newsItem.description?.isEmpty ?? true ? "Nothing here to showcase you know so please ignore this descryption" : newsItem.description ?? "")
                 .padding(20)

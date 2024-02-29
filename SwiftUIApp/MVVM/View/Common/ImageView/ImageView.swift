@@ -13,7 +13,12 @@ struct ImageView: View {
     let width:CGFloat
     let height:CGFloat
     let isRounded:Bool
-    
+    init(url: String, width: CGFloat = 100, height: CGFloat = 100, isRounded: Bool = false) {
+        self.url = url
+        self.width = width
+        self.height = height
+        self.isRounded = isRounded
+    }
     var body: some View {
         WebImage(url: URL(string: url))
             .resizable()
@@ -26,5 +31,5 @@ struct ImageView: View {
 }
 
 #Preview {
-    ImageView(url: "https://www.drawing123.com/wp-content/uploads/2021/10/pikachu-drawing-step-11.png",width: 100,height: 100, isRounded: true)
+    ImageView(url: "https://www.drawing123.com/wp-content/uploads/2021/10/pikachu-drawing-step-11.png")
 }

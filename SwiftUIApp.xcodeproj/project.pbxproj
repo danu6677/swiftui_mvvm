@@ -151,10 +151,9 @@
 		6D4600182B8F9F6300803F64 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				6D4600402B90054500803F64 /* NewsDetail */,
 				6D46003B2B8FAD5000803F64 /* Main */,
 				6D4600362B8FAC7500803F64 /* News */,
-				6D46FFC82B8F922A00803F64 /* ContentView.swift */,
+				6D4600402B90054500803F64 /* NewsDetail */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -220,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				6D46FFC62B8F922A00803F64 /* SwiftUIAppApp.swift */,
+				6D46FFC82B8F922A00803F64 /* ContentView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";

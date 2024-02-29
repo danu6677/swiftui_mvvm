@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NewsFeedView: View {
+struct NewsFeedView : View {
     @StateObject private var viewModel = NewsViewModel()
     @State private var hasFetchedData = false
     
