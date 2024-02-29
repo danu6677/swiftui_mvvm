@@ -12,7 +12,7 @@ struct NewsModel:Hashable,Codable,Identifiable {
     let title,description,source,type: String?
     let images:ImageURL?
     let imageData:Data?
-    let isRead:Bool?
+    var isRead:Bool?
 }
 
 struct ImageURL:Hashable,Codable {
