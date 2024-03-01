@@ -7,18 +7,20 @@
 
 import SwiftUI
 
-struct NewsFeedView : View {
+struct NewsFeedView: View {
     @StateObject private var viewModel = NewsViewModel()
     @State private var hasFetchedData = false
+    @State private var searchedText = ""
     
     var body: some View {
+       
         NavigationStack {
+            
             VStack{
-                Text("News Feed")
-                    .font(.system(size: 30))
+                
                 List {
-                   
-                    ForEach($viewModel.newsData) { $newsItem in
+
+                    ForEach($viewModel.newsData,id: \.self) { $newsItem in
                     
                         NavigationLink(value: newsItem) {
                             NewsItem(newsItem: $newsItem)
@@ -26,10 +28,11 @@ struct NewsFeedView : View {
                         }
                         .listRowSeparator(.hidden)//Remove the row separator
                         .listRowBackground(Color.clear) // Set row background color to clear to disable selection highlight
+                        
                     }
                 }
                 .onAppear{
-                   
+                    
                     if !hasFetchedData { // Check if data has already been fetched
                         Task {
                             await viewModel.fetchNewsData()
@@ -38,10 +41,18 @@ struct NewsFeedView : View {
                     }
                     
                 }
-    
+                .navigationTitle("News Feed")
                 .listStyle(PlainListStyle())
                 .conditionalProgressView(isLoading: viewModel.isLoading)
                 .padding(.leading)
+                //Pull to refresh
+                .refreshable {
+                    print("Refresh Data........")
+                }
+                //Search bar
+                .searchable(text: $searchedText, prompt: "Search News").onChange(of: searchedText, { oldValue, newValue in
+                    print(newValue)
+                })
                 //MARK: Network Error Handling
                 .alert(item: $viewModel.errorMessage) { error in
                             Alert(
@@ -68,6 +79,9 @@ struct NewsFeedView : View {
                    
                     DetailView(newsItem: newsItemBinding)
                 }
+                .background( Color(UIColor.systemGray5)
+                    .edgesIgnoringSafeArea(.all))
+                
             }
         }
     }

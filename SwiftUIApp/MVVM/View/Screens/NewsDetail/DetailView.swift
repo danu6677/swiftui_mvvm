@@ -12,12 +12,8 @@ struct DetailView: View {
     //MARK: Acts as a binding to the isRead property of newsItem.
     var isRead: Binding<Bool> {
             Binding<Bool>(
-                get: {
-                    newsItem.isRead ?? false
-                },
-                set: {
-                    newsItem.isRead = $0
-                }
+                get: {newsItem.isRead ?? false},
+                set: {newsItem.isRead = $0}
             )
     }
     
@@ -87,3 +83,4 @@ struct DetailView: View {
         )
     )
 }
+

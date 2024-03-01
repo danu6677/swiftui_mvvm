@@ -23,7 +23,7 @@ final class Network {
 
     }
     
-    func request<T: Decodable>(url: URL, method: HTTPMethod = .get, body: Data? = nil, headers: [String: String] = [:]) async throws -> T {
+    func request<T: Codable>(url: URL, method: HTTPMethod = .get, body: Data? = nil, headers: [String: String] = [:]) async throws -> T {
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
         request.httpBody = body
