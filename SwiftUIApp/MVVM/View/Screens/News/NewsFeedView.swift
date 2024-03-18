@@ -9,7 +9,6 @@ import SwiftUI
 
 struct NewsFeedView: View {
     @StateObject private var viewModel = NewsViewModel()
-    @State private var hasFetchedData = false
     @State private var searchedText = ""
     
     var body: some View {
@@ -32,14 +31,9 @@ struct NewsFeedView: View {
                     }
                 }
                 .onAppear{
-                    
-                    if !hasFetchedData { // Check if data has already been fetched
                         Task {
                             await viewModel.fetchNewsData()
-                            hasFetchedData = true // Update flag to indicate data has been fetched
                         }
-                    }
-                    
                 }
                 .navigationTitle("News Feed")
                 .listStyle(PlainListStyle())

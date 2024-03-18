@@ -7,7 +7,8 @@
 
 import Foundation
 class NewsViewModel:ObservableObject {
-    @Published var isLoading = false
+
+    @Published var isLoading = true
     @Published var newsData: [NewsModel] = []
     @Published var errorMessage: ErrorWrapper? = nil
     private var service:NewsServiceProtocol
@@ -15,28 +16,27 @@ class NewsViewModel:ObservableObject {
     init(service: NewsServiceProtocol = NewsService()) {
         self.service = service
     }
-    
+    /*After the getNews() operation completes, Swift resumes execution of the fetchNewsData() function. Since fetchNewsData() is marked with @MainActor, any subsequent updates to UI-related properties (newsData, errorMessage, isLoading) will occur on the main thread.
+     */
     @MainActor
     func fetchNewsData() async {
-        
-            self.isLoading = true
-        
-        do {
-            let fetchedNewsData = try await service.getNews()
-           
+       
+        if isLoading {
+    
+          do {
+                let fetchedNewsData = try await service.getNews()
                 self.newsData = fetchedNewsData
                 self.isLoading = false
             
-        } catch {
-            print(
-                error.localizedDescription
-            )
+           } catch {
+                print(error.localizedDescription)
           
                 self.errorMessage = ErrorWrapper(
                     errorMessage: error.localizedDescription
                 )
                 self.isLoading = false
             
+           }
         }
     }
 }
