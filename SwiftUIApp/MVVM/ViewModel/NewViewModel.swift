@@ -16,30 +16,29 @@ class NewsViewModel:ObservableObject {
         self.service = service
     }
     
-    
+    @MainActor
     func fetchNewsData() async {
-        DispatchQueue.main.async {
+        
             self.isLoading = true
-        }
+        
         do {
             let fetchedNewsData = try await service.getNews()
-            DispatchQueue.main.async {
+           
                 self.newsData = fetchedNewsData
                 self.isLoading = false
-            }
+            
         } catch {
             print(
                 error.localizedDescription
             )
-            DispatchQueue.main.async {
+          
                 self.errorMessage = ErrorWrapper(
                     errorMessage: error.localizedDescription
                 )
                 self.isLoading = false
-            }
+            
         }
     }
-    
 }
 
 
