@@ -8,7 +8,7 @@
 import Foundation
 class NewsViewModel:ObservableObject {
 
-    @Published var isLoading = true
+    @Published private (set) var isLoading = true
     @Published var newsData: [NewsModel] = []
     @Published var errorMessage: ErrorWrapper? = nil
     private var service:NewsServiceProtocol
@@ -20,17 +20,13 @@ class NewsViewModel:ObservableObject {
      */
     @MainActor
     func fetchNewsData() async {
-       
         if isLoading {
-    
           do {
                 let fetchedNewsData = try await service.getNews()
                 self.newsData = fetchedNewsData
                 self.isLoading = false
-            
            } catch {
                 print(error.localizedDescription)
-          
                 self.errorMessage = ErrorWrapper(
                     errorMessage: error.localizedDescription
                 )
@@ -39,8 +35,6 @@ class NewsViewModel:ObservableObject {
         }
     }
 }
-
-
 
 struct ErrorWrapper: Identifiable {
     let id = UUID()

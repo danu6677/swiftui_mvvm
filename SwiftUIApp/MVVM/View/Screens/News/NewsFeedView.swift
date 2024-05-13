@@ -12,13 +12,9 @@ struct NewsFeedView: View {
     @State private var searchedText = ""
     
     var body: some View {
-        
         NavigationStack {
-            
-            VStack{
-                
+            VStack(alignment: .center, spacing: 10){
                 List {
-                    
                     ForEach($viewModel.newsData,id: \.self) { $newsItem in
                         
                         NavigationLink(value: newsItem) {
@@ -38,7 +34,6 @@ struct NewsFeedView: View {
                 .navigationTitle("News Feed")
                 .listStyle(PlainListStyle())
                 .conditionalProgressView(isLoading: viewModel.isLoading)
-                .padding(.leading)
                 //Pull to refresh
                 .refreshable {
                     print("Refresh Data........")

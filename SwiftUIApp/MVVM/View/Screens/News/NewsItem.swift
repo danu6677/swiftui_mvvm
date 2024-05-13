@@ -11,7 +11,8 @@ import SDWebImageSwiftUI
 struct NewsItem: View {
     @Binding var newsItem:NewsModel
     var body: some View {
-        VStack{
+        VStack (alignment: .center){
+            //Red Dot
             HStack{
                 Spacer()
                 Circle()
@@ -19,11 +20,12 @@ struct NewsItem: View {
                     .foregroundColor( newsItem.isRead ?? false ? .green : .red)
                     .padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 20))
             }
-                
-            ImageVw(url: newsItem.images?.square_140 ?? "",isRounded: true)
-                .padding(20)
-            Text(newsItem.description?.isEmpty ?? true ? "Nothing here to showcase you know so please ignore this descryption" : newsItem.description ?? "")
-                .padding(20)
+            //Image and Text
+            Group {
+                ImageVw(url: newsItem.images?.square_140 ?? "",isRounded: true)
+                Text(newsItem.description?.isEmpty ?? true ? "Nothing here to showcase you know so please ignore this descryption" : newsItem.description ?? "")
+            }
+            .padding(20)
             
         }
         .frame(width: UIScreen.main.bounds.width * 0.9)//Use 90%
