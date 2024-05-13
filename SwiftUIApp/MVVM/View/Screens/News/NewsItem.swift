@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct NewsItem: View {
     @Binding var newsItem:NewsModel
@@ -19,7 +20,7 @@ struct NewsItem: View {
                     .padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 20))
             }
                 
-            ImageView(url: newsItem.images?.square_140 ?? "",isRounded: true)
+            ImageVw(url: newsItem.images?.square_140 ?? "",isRounded: true)
                 .padding(20)
             Text(newsItem.description?.isEmpty ?? true ? "Nothing here to showcase you know so please ignore this descryption" : newsItem.description ?? "")
                 .padding(20)
@@ -30,7 +31,16 @@ struct NewsItem: View {
         .cornerRadius(10) // Card corner radius
         .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: 5) // Add elevation with shadow
     }
-    
+    private func ImageVw(url:String,width:CGFloat = 100, height:CGFloat = 100, isRounded:Bool = true) -> some View {
+        
+       return WebImage(url: URL(string: url))
+            .resizable()
+            .scaledToFill()
+            .clipShape(
+                isRounded ? AnyShape(Circle()) : AnyShape(Rectangle())
+            ) // Apply circle shape to make it a full circle
+            .frame(width: width, height: height)
+    }
 }
 
 #Preview {

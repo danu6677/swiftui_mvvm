@@ -12,15 +12,15 @@ struct NewsFeedView: View {
     @State private var searchedText = ""
     
     var body: some View {
-       
+        
         NavigationStack {
             
             VStack{
                 
                 List {
-
-                    ForEach($viewModel.newsData,id: \.self) { $newsItem in
                     
+                    ForEach($viewModel.newsData,id: \.self) { $newsItem in
+                        
                         NavigationLink(value: newsItem) {
                             NewsItem(newsItem: $newsItem)
                                 .padding(.vertical)
@@ -31,9 +31,9 @@ struct NewsFeedView: View {
                     }
                 }
                 .onAppear{
-                        Task {
-                            await viewModel.fetchNewsData()
-                        }
+                    Task {
+                        await viewModel.fetchNewsData()
+                    }
                 }
                 .navigationTitle("News Feed")
                 .listStyle(PlainListStyle())
@@ -49,15 +49,15 @@ struct NewsFeedView: View {
                 })
                 //MARK: Network Error Handling
                 .alert(item: $viewModel.errorMessage) { error in
-                            Alert(
-                                title: Text("Error"),
-                                message: Text(error.errorMessage),
-                                dismissButton: .default(Text("OK")) {
-                                    // Reset the error when dismissed
-                                    viewModel.errorMessage = nil
-                                }
-                            )
-                 }
+                    Alert(
+                        title: Text("Error"),
+                        message: Text(error.errorMessage),
+                        dismissButton: .default(Text("OK")) {
+                            // Reset the error when dismissed
+                            viewModel.errorMessage = nil
+                        }
+                    )
+                }
                 //MARK: Navigation
                 .navigationDestination(for: NewsModel.self) { newsItem in
                     let newsItemBinding = Binding(
@@ -70,7 +70,7 @@ struct NewsFeedView: View {
                         }
                         
                     )
-                   
+                    
                     DetailView(newsItem: newsItemBinding)
                 }
                 .background( Color(UIColor.systemGray5)
