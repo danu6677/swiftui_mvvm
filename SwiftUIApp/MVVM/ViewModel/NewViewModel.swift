@@ -35,7 +35,6 @@ class NewsViewModel:ObservableObject {
                     errorMessage: error.localizedDescription
                 )
                 self.isLoading = false
-            
            }
         }
     }

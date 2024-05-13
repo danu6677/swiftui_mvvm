@@ -28,6 +28,10 @@
 		6D46003D2B8FAD9600803F64 /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D46003C2B8FAD9600803F64 /* NewsItem.swift */; };
 		6D4600432B90379E00803F64 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4600422B90379E00803F64 /* TabView.swift */; };
 		6D4600462B903EDC00803F64 /* MoviesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4600452B903EDC00803F64 /* MoviesView.swift */; };
+		6D4600E72BF194AD00803F64 /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4600E62BF194AD00803F64 /* MockService.swift */; };
+		6D4600E82BF1979C00803F64 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D46FFFC2B8F950400803F64 /* Config.swift */; };
+		6D4600E92BF197B200803F64 /* CustomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D46002A2B8FA42B00803F64 /* CustomProgressView.swift */; };
+		6D4600EA2BF197BC00803F64 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D46FFFA2B8F945E00803F64 /* Network.swift */; };
 		6D46FFC72B8F922A00803F64 /* SwiftUIAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D46FFC62B8F922A00803F64 /* SwiftUIAppApp.swift */; };
 		6D46FFC92B8F922A00803F64 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D46FFC82B8F922A00803F64 /* ContentView.swift */; };
 		6D46FFCB2B8F922B00803F64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D46FFCA2B8F922B00803F64 /* Assets.xcassets */; };
@@ -72,6 +76,7 @@
 		6D46003C2B8FAD9600803F64 /* NewsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = "<group>"; };
 		6D4600422B90379E00803F64 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		6D4600452B903EDC00803F64 /* MoviesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesView.swift; sourceTree = "<group>"; };
+		6D4600E62BF194AD00803F64 /* MockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockService.swift; sourceTree = "<group>"; };
 		6D46FFC32B8F922A00803F64 /* SwiftUIApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D46FFC62B8F922A00803F64 /* SwiftUIAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIAppApp.swift; sourceTree = "<group>"; };
 		6D46FFC82B8F922A00803F64 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -305,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				6D46FFDC2B8F922B00803F64 /* SwiftUIAppTests.swift */,
+				6D4600E62BF194AD00803F64 /* MockService.swift */,
 			);
 			path = SwiftUIAppTests;
 			sourceTree = "<group>";
@@ -515,11 +521,15 @@
 			files = (
 				6D4600352B8FA69E00803F64 /* View+Ext.swift in Sources */,
 				6D46FFDD2B8F922B00803F64 /* SwiftUIAppTests.swift in Sources */,
+				6D4600E82BF1979C00803F64 /* Config.swift in Sources */,
 				6D4600132B8F9DEB00803F64 /* NewModel.swift in Sources */,
 				6D4600232B8FA22900803F64 /* NewsServiceProtocol.swift in Sources */,
+				6D4600EA2BF197BC00803F64 /* Network.swift in Sources */,
 				6D4600262B8FA2A200803F64 /* NewsService.swift in Sources */,
 				6D46001F2B8FA0B800803F64 /* Enums.swift in Sources */,
 				6D4600162B8F9E0200803F64 /* NewViewModel.swift in Sources */,
+				6D4600E92BF197B200803F64 /* CustomProgressView.swift in Sources */,
+				6D4600E72BF194AD00803F64 /* MockService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
