@@ -81,7 +81,6 @@ struct DetailView: View {
                 source: "",
                 type: "",
                 images: nil,
-                imageData: nil,
                 isRead: false
             )
         )

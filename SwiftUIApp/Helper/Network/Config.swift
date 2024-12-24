@@ -14,8 +14,8 @@ struct Config {
         
         
         /// Generates the URL for paginated news items. Offset meaning the items u wanna skip and fetch
-    static func paginatedNewsURL (nextPage:Int,pageSize:Int, offset:Int) -> String {
-            return "\(newsItemsEndpoint)&page=\(nextPage)&pageSize=\(pageSize)&offset=\(offset)"
+    static func paginatedNewsURL (nextPage:Int,pageSize:Int) -> String {
+            return "\(newsItemsEndpoint)&page=\(nextPage)&pageSize=\(pageSize)"
     }
     
 }

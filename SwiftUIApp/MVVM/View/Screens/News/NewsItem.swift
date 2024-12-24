@@ -9,6 +9,7 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct NewsItem: View {
+    //Binding is not needed here as no data been written back to source of truth of data
     @Binding var newsItem:NewsModel
     var body: some View {
         VStack (alignment: .center){
@@ -46,5 +47,5 @@ struct NewsItem: View {
 }
 
 #Preview {
-    NewsItem(newsItem: .constant(NewsModel(id: 12, publishedAt: 0, title: "Local News", description: "So many news to display", source: "", type: "", images: ImageURL(square_140: "https://www.drawing123.com/wp-content/uploads/2021/10/pikachu-drawing-step-11.png"), imageData: nil,isRead: false)))
+    NewsItem(newsItem: .constant(NewsModel(id: 12, publishedAt: 0, title: "Local News", description: "So many news to display", source: "", type: "", images: ImageURL(square_140: "https://www.drawing123.com/wp-content/uploads/2021/10/pikachu-drawing-step-11.png"),isRead: false)))
 }

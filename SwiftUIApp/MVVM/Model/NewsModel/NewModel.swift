@@ -11,7 +11,6 @@ struct NewsModel:Hashable,Codable,Identifiable {
     let id,publishedAt: Int?
     let title,description,source,type: String?
     let images:ImageURL?
-    let imageData:Data?
     var isRead:Bool?
 }
 
