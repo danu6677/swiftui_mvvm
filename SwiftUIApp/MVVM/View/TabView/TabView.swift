@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TabBar: View {
     @State private var selectedTab:Tab = .news
+    @StateObject private var coordinator = NavigationCoordinator()
 
         var body: some View {
             TabView(selection:$selectedTab){
@@ -19,6 +20,7 @@ struct TabBar: View {
                     }
                     .tag(Tab.news)
                 MoviesView()
+                    .environmentObject(coordinator)
                     .tabItem {
                         Image(systemName: "film")
                         Text("Movies")
@@ -33,6 +35,8 @@ struct TabBar: View {
 
 #Preview {
     TabBar()
+        .environmentObject(NavigationCoordinator())
+
 }
 
 enum Tab: Hashable {
