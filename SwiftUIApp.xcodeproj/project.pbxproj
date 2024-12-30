@@ -10,6 +10,9 @@
 		6D4392C52D2231AA003844C9 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4392C42D2231AA003844C9 /* Navigation.swift */; };
 		6D4392C62D2231AA003844C9 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4392C42D2231AA003844C9 /* Navigation.swift */; };
 		6D4392C92D2237F3003844C9 /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4392C82D2237F3003844C9 /* MovieDetail.swift */; };
+		6D4392D42D2311F4003844C9 /* MoviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4392D32D2311F1003844C9 /* MoviewModel.swift */; };
+		6D4392D52D2311F4003844C9 /* MoviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4392D32D2311F1003844C9 /* MoviewModel.swift */; };
+		6D4392D82D23124B003844C9 /* ModalViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4392D72D231246003844C9 /* ModalViews.swift */; };
 		6D4600002B8F9C9F00803F64 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 6D46FFFF2B8F9C9F00803F64 /* SDWebImageSwiftUI */; };
 		6D4600022B8F9CB200803F64 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 6D4600012B8F9CB200803F64 /* SDWebImageSwiftUI */; };
 		6D46000C2B8F9DA000803F64 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D46000B2B8F9DA000803F64 /* DetailView.swift */; };
@@ -68,6 +71,8 @@
 /* Begin PBXFileReference section */
 		6D4392C42D2231AA003844C9 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		6D4392C82D2237F3003844C9 /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
+		6D4392D32D2311F1003844C9 /* MoviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviewModel.swift; sourceTree = "<group>"; };
+		6D4392D72D231246003844C9 /* ModalViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViews.swift; sourceTree = "<group>"; };
 		6D46000B2B8F9DA000803F64 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		6D4600112B8F9DEB00803F64 /* NewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewModel.swift; sourceTree = "<group>"; };
 		6D4600142B8F9E0200803F64 /* NewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewModel.swift; sourceTree = "<group>"; };
@@ -141,9 +146,26 @@
 			path = MovieDetail;
 			sourceTree = "<group>";
 		};
+		6D4392D22D2311D7003844C9 /* MovieModel */ = {
+			isa = PBXGroup;
+			children = (
+				6D4392D32D2311F1003844C9 /* MoviewModel.swift */,
+			);
+			path = MovieModel;
+			sourceTree = "<group>";
+		};
+		6D4392D62D231239003844C9 /* ModalViews */ = {
+			isa = PBXGroup;
+			children = (
+				6D4392D72D231246003844C9 /* ModalViews.swift */,
+			);
+			path = ModalViews;
+			sourceTree = "<group>";
+		};
 		6D46000E2B8F9DB300803F64 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6D4392D22D2311D7003844C9 /* MovieModel */,
 				6D46003F2B8FC6BF00803F64 /* NewsModel */,
 				6D46003A2B8FAD2800803F64 /* CoreData */,
 			);
@@ -181,6 +203,7 @@
 		6D4600182B8F9F6300803F64 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				6D4392D62D231239003844C9 /* ModalViews */,
 				6D4392C72D2237DB003844C9 /* MovieDetail */,
 				6D4600442B903ECB00803F64 /* Movies */,
 				6D46003B2B8FAD5000803F64 /* Main */,
@@ -447,7 +470,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1520;
-				LastUpgradeCheck = 1520;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					6D46FFC22B8F922A00803F64 = {
 						CreatedOnToolsVersion = 15.2;
@@ -522,6 +545,7 @@
 				6D46FFFB2B8F945E00803F64 /* Network.swift in Sources */,
 				6D46001E2B8FA0B800803F64 /* Enums.swift in Sources */,
 				6D4600462B903EDC00803F64 /* MoviesView.swift in Sources */,
+				6D4392D52D2311F4003844C9 /* MoviewModel.swift in Sources */,
 				6D46FFD02B8F922B00803F64 /* Persistence.swift in Sources */,
 				6D4392C62D2231AA003844C9 /* Navigation.swift in Sources */,
 				6D46FFC92B8F922A00803F64 /* ContentView.swift in Sources */,
@@ -535,6 +559,7 @@
 				6D4600222B8FA22900803F64 /* NewsServiceProtocol.swift in Sources */,
 				6D46003D2B8FAD9600803F64 /* NewsItem.swift in Sources */,
 				6D4600302B8FA5C900803F64 /* ImageView.swift in Sources */,
+				6D4392D82D23124B003844C9 /* ModalViews.swift in Sources */,
 				6D4600432B90379E00803F64 /* TabView.swift in Sources */,
 				6D46FFFD2B8F950400803F64 /* Config.swift in Sources */,
 			);
@@ -553,6 +578,7 @@
 				6D4600EA2BF197BC00803F64 /* Network.swift in Sources */,
 				6D4600262B8FA2A200803F64 /* NewsService.swift in Sources */,
 				6D46001F2B8FA0B800803F64 /* Enums.swift in Sources */,
+				6D4392D42D2311F4003844C9 /* MoviewModel.swift in Sources */,
 				6D4600162B8F9E0200803F64 /* NewViewModel.swift in Sources */,
 				6D4600E92BF197B200803F64 /* CustomProgressView.swift in Sources */,
 				6D4600E72BF194AD00803F64 /* MockService.swift in Sources */,
@@ -764,7 +790,6 @@
 		6D46FFF02B8F922B00803F64 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -784,7 +809,6 @@
 		6D46FFF12B8F922B00803F64 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -804,7 +828,6 @@
 		6D46FFF32B8F922B00803F64 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5W5V4ZF56C;
@@ -822,7 +845,6 @@
 		6D46FFF42B8F922B00803F64 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5W5V4ZF56C;

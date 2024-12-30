@@ -10,7 +10,7 @@ import SwiftUI
 struct MovieDetailView: View {
     let movie: Movie
     @EnvironmentObject var coordinator: NavigationCoordinator
-    
+
     var body: some View {
         VStack {
             Text("Detail Screen: \(movie.title)")
