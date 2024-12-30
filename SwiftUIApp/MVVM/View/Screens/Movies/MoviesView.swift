@@ -26,7 +26,6 @@ struct MoviesView: View {
         }
     }
     
-    @ViewBuilder
     private var content: some View {
         VStack(alignment: .center, spacing: 10) {
             List {
@@ -36,26 +35,56 @@ struct MoviesView: View {
         }
     }
     
-    @ViewBuilder
     private var movieSection: some View {
         Section(header: Text("Movies")) {
             ForEach(movies) { movie in
-                NavigationLink(value: Screen.movieDetail(movie: movie)) {
-                    HStack {
-                        Image(systemName: "film")
-                        Text(movie.title)
-                    }
+                MovieRow(movie: movie) {
+                    coordinator.push(to: .movieDetail(movie: movie))
                 }
             }
         }
     }
     
-    @ViewBuilder
+    private struct MovieRow: View {
+        let movie: Movie
+        let onSelect: () -> Void
+        
+        var body: some View {
+            Button(action: onSelect) {
+                HStack {
+                    Image(systemName: "film")
+                    Text(movie.title)
+                }
+            }
+            .buttonStyle(.plain)
+        }
+    }
+    
     private var actionSection: some View {
         Section(header: Text("Actions")) {
-            Button("Open Modal") {
+            Button {
                 coordinator.presentModal()
+            }label: {
+                HStack {
+                    Image(systemName: "film")
+                    Text("Open ModalView")
+                }
             }
+            .buttonStyle(PlainButtonStyle())//Avoid blue tint
+        }
+    }
+    
+    private var modalContent: some View {
+        NavigationStack(path: $coordinator.modalPath) {
+            ModalView()
+                .navigationDestination(for: Screen.self, destination: modalNavigationDestination)
+                .toolbar {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("Dismiss") {
+                            coordinator.dismissModal()
+                        }
+                    }
+                }
         }
     }
     
@@ -70,21 +99,6 @@ struct MoviesView: View {
     }
     
     @ViewBuilder
-    private var modalContent: some View {
-        NavigationStack(path: $coordinator.modalPath) {
-            ModalContentView()
-                .navigationDestination(for: Screen.self, destination: modalNavigationDestination)
-                .toolbar {
-                    ToolbarItem(placement: .cancellationAction) {
-                        Button("Dismiss") {
-                            coordinator.dismissModal()
-                        }
-                    }
-                }
-        }
-    }
-    
-    @ViewBuilder
     private func modalNavigationDestination(for screen: Screen) -> some View {
         switch screen {
         case .modalContent:
@@ -93,6 +107,7 @@ struct MoviesView: View {
             EmptyView()
         }
     }
+    
 }
 
 #Preview {

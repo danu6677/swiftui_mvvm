@@ -6,7 +6,7 @@
 //
 import SwiftUI
 
-struct ModalContentView: View {
+struct ModalView: View {
     @EnvironmentObject var coordinator: NavigationCoordinator
     
     var body: some View {
@@ -23,7 +23,7 @@ struct ModalContentView: View {
     }
 }
 #Preview {
-    ModalContentView()
+    ModalView()
         .environmentObject(NavigationCoordinator())
 }
 

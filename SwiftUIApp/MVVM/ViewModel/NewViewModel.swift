@@ -8,7 +8,7 @@
 import Foundation
 class NewsViewModel:ObservableObject {
 
-    @Published private (set) var isLoading = true
+    @Published private(set) var isLoading = true
     @Published var newsData: [NewsModel] = []
     @Published var errorMessage: ErrorWrapper? = nil
     private var service:NewsServiceProtocol
