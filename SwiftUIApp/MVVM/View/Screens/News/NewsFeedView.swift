@@ -74,7 +74,6 @@ struct NewsFeedView: View {
             }
         }
     }
-    
 }
 
 #Preview {

@@ -22,4 +22,21 @@ extension View {
             return AnyView(self)
         }
     }
+    
+    func showSpinner(isLoading:Bool) -> some View {
+        if isLoading {
+            return AnyView(
+                self .blur(radius: 3)
+                    .overlay(
+                        ProgressView()
+                            .progressViewStyle(.circular)
+                            .scaleEffect(3)
+                    )
+                    .disabled(true)
+            )
+        }else {
+            return AnyView(self)
+        }
+    }
 }
+

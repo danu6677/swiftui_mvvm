@@ -107,7 +107,6 @@ struct MoviesView: View {
             EmptyView()
         }
     }
-    
 }
 
 #Preview {
