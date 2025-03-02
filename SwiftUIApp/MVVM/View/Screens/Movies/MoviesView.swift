@@ -18,7 +18,7 @@ struct MoviesView: View {
     
     var body: some View {
         NavigationStack(path: $coordinator.path) {
-            content
+            Content
                 .navigationDestination(for: Screen.self, destination: navigationDestination)
         }
         .sheet(isPresented: $coordinator.isModalPresented) {
@@ -26,7 +26,7 @@ struct MoviesView: View {
         }
     }
     
-    private var content: some View {
+    private var Content: some View {
         VStack(alignment: .center, spacing: 10) {
             List {
                 movieSection

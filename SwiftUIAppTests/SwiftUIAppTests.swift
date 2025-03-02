@@ -10,8 +10,8 @@ import XCTest
 
 final class SwiftUIAppTests: XCTestCase {
 
-    private (set) var viewModel: NewsViewModel!
-    private (set) var mockService: MockService!
+    private(set) var viewModel: NewsViewModel!
+    private(set) var mockService: MockService!
     override func setUp() {
         super.setUp()
         mockService = MockService()
